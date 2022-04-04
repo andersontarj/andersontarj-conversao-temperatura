@@ -5,7 +5,6 @@ kind: Deployment
 metadata:
   name: converttemperatura
 spec:
-  replicas: 2
   selector:
     matchLabels:
       app: convert-temp
@@ -37,7 +36,7 @@ spec:
     app: convert-temp
   ports:
   - protocol: TCP
-    port: 80
+    port: 8080
     #nodePort: 30000
   type: LoadBalancer
   #type: NodePort
