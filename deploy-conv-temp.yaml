@@ -37,7 +37,7 @@ spec:
     app: convert-temp
   ports:
   - protocol: TCP
-    port: 8080
-    nodePort: 30000
+    port: 80
+    #nodePort: 30000
   type: LoadBalancer
   #type: NodePort
