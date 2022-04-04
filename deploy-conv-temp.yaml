@@ -1,0 +1,43 @@
+# Deployment da aplicação
+
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: converttemperatura
+spec:
+  replicas: 2
+  selector:
+    matchLabels:
+      app: convert-temp
+  template:
+    metadata:
+      labels:
+        app: convert-temp
+    spec:
+      containers:
+        - name: convert-temp
+          image: andersontarj/convert-temperatura:latest
+          ports:
+            - containerPort: 8080
+          resources:
+            requests:
+              memory: "128Mi"
+              cpu: "0.5"
+            limits:
+              memory: "512Mi"
+              cpu: "1"
+---
+# # Service NodeJS
+apiVersion: v1
+kind: Service
+metadata:
+  name: convert-temp
+spec:
+  selector:
+    app: convert-temp
+  ports:
+  - protocol: TCP
+    port: 8080
+    nodePort: 30000
+  type: LoadBalancer
+  #type: NodePort
