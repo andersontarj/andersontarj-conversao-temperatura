@@ -1,5 +1,5 @@
 
-name: CI-CD-Rotten-Potatoes
+name: CI-CD-Convert-Temperatura
 
 on:
   push:
