@@ -3,7 +3,7 @@ kind: Deployment
 metadata:
   name: converttemperatura
 spec:
-  replicas: 2
+  replicas: 4
   selector:
     matchLabels:
       app: convert-temperatura
