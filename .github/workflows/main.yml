@@ -49,4 +49,4 @@ jobs:
         with:
           images: andersontarj/convert-temperatura:${{ github.run_number }}
           manifests: |
-            deploy-conv-temp.yaml
+            k8s/deploy-conv-temp.yaml
