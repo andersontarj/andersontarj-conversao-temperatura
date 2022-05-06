@@ -1,19 +1,16 @@
-#FROM node:14.17.5
 FROM debian:stretch-slim
-LABEL MAINTAINER = "Anderson Amaral - INICIATIVA KUBERNETES"
+LABEL MAINTAINER = "Anderson Amaral - KubDev/DevOps Pro"
 
 RUN groupadd --gid 1000 node \
-  && useradd --uid 1000 --gid node --shell /bin/bash --create-home node
+  && useradd --uid 1000 --gid node --shell /bin/bash --create-home node \
+  && mkdir -p /app/node_modules \
+  chown -R node:node /app
 
 ENV NODE_VERSION 16.14.2
 
 RUN ARCH= && dpkgArch="$(dpkg --print-architecture)" \
     && case "${dpkgArch##*-}" in \
       amd64) ARCH='x64';; \
-      ppc64el) ARCH='ppc64le';; \
-      s390x) ARCH='s390x';; \
-      arm64) ARCH='arm64';; \
-      armhf) ARCH='armv7l';; \
       i386) ARCH='x86';; \
       *) echo "unsupported architecture"; exit 1 ;; \
     esac \
