@@ -21,7 +21,7 @@ docker image tag andersontarj/conversaotemperatura:v1 andersontarj/conversaotemp
 Executando a imagem criada:
 
 ```
-docker run --name conversaotemperatura -it -d -p 8888:5000 andersontarj/conversaotemperatura:v1
+docker run --name conversaotemperatura -it -d -p 8080:8080 andersontarj/conversaotemperatura:v1
 ```
 
 Para verificar o container em execução, execute o comando:
