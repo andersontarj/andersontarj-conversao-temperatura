@@ -32,10 +32,10 @@ docker container ls
 
 Terá uma saída igual a abaixo:
 
-![Diagrama](./img/contlist.png)
+![Diagrama](./imgs/contlist.png)
 
 Após a execução da imagem **andersontarj/conversaotemperatura** abra o navegador de sua preferencia e digite <http://localhost:8080>
 
 Se tudo estiver correto você vera no navegador a tela igual a que está abaixo:
 
-![Diagrama](./img/convtemp.png)
+![Diagrama](./imgs/convtemp.png)
