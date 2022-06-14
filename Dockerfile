@@ -4,7 +4,7 @@ LABEL MAINTAINER = "Anderson Amaral - KubDev/DevOps Pro"
 RUN groupadd --gid 1000 node \
   && useradd --uid 1000 --gid node --shell /bin/bash --create-home node \
   && mkdir -p /app/node_modules \
-  chown -R node:node /app
+  && chown -R node:node /app
 
 ENV NODE_VERSION 16.14.2
 
